@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const greet=()=>
+        {
+            alert("Good Morning")
+        }
+        const check=()=>{
+            const value=confirm("are you sure?")
+            if(value==true){
+                console.log("ok")
+            }
+            else{
+                console.log("you presh Cancle button")
+            }
+        }
+        const solve=()=>{
+            let v=prompt("20-10=")
+            if(v==10){
+                document.getElementById('heading').style.color='orange'
+            }
+            else{
+                document.getElementById('heading').style.color='black'
+                alert("Learn Math")
+            }
+        }
+
+    </script>
+    <h1 id="heading">We are learning DOM</h1>
+    <p>DOM manuputation</p>
+    <button onclick="greet()">Submit1</button>
+    <button onclick="check()">Submit2</button>
+    <button onclick="solve()">Submit3</button>
+</body>
+</html>

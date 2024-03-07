@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Just Learn DOM here</h1>
+    <p id="element">i am an element.</p>
+    <button onclick="change()">Change paragraph</button>
+</body>
+</html>
+<script>
+const change=()=>
+{
+    let title=document.getElementById('element')
+    title.innerHTML='<p>Hello friends,now i am here.</p>'
+}
+</script>
