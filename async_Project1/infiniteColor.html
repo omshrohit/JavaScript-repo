@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Color shoud change every second</h1>
+    <button id="start">Start</button>
+    <button id="stop1">Stop</button>
+</body>
+</html>
+<script>
+
+const start=document.querySelector("#start")
+const stop1=document.querySelector("#stop1")
+
+const hex="0123456789ABCDEF"
+let startStop;
+
+let genRandColCode=function(){
+    let randomColor="#"
+    for(let i=0;i<6;i++){
+        randomColor += hex[Math.floor(Math.random()*16)]
+    }
+    return randomColor
+}
+
+let genRandomCol=()=>{
+    console.log(genRandColCode())
+    document.body.style.backgroundColor = genRandColCode()
+}
+
+start.addEventListener('click',()=>{
+    startStop=setInterval(genRandomCol,1000)
+})
+
+stop1.addEventListener('click',()=>{
+    clearInterval(startStop)
+})
+
+
+</script>
