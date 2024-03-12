@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyDown</title>
+    <style>
+        #container{
+            margin-top:200px;
+            display: flex;
+            justify-content:center;
+            color:orange;
+        }
+        tr{
+            text-align:center;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <div id="container">
+        <p>keyDown please !</p>
+      
+    </div>
+</body>
+<script>
+    const p=document.querySelector("p")
+    window.addEventListener('keydown',(e)=>{
+        p.innerHTML=`
+        <table border='2px solid yellow'>
+            <tr>
+              <th>Key</th>
+              <th>KeyCode</th>
+              <th>Code</th>
+            </tr>
+            <tr>
+              <td>${e.key === " "?"space":e.key}</td>
+              <td>${e.keyCode}</td>
+              <td>${e.code}</td>
+            </tr>
+        </table>
+        `
+        
+    })
+
+</script>
+
+</html>
