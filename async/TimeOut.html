@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai with Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+const stop1=document.getElementById("stop")
+const h1=document.querySelector("h1")
+
+const saySomething=()=>{
+    h1.innerHTML=`learn javaScript in depth`
+    console.log("Hello friends!")
+}
+
+let control=setTimeout(saySomething,2000)
+stop1.addEventListener('click',()=>
+{
+    clearTimeout(control)
+    console.log("stop")
+})
+   
+</script>
+</html>

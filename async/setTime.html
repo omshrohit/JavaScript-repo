@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>learn Js with hitesh sir</h1>
+    <button>Stop</button>
+</body>
+</html>
+<script>
+    const h1=document.querySelector("h1")
+    const button=document.querySelector("button")
+    
+    const say=()=>{
+        h1.innerHTML=`learn js with react`
+    }
+    const update=setTimeout(say,2000)
+
+    button.addEventListener('click',(e)=>
+    {
+        clearTimeout(update)
+        console.log('stop')
+    })
+    // clearTimeout(update)
+    // setTimeout(() => {
+    //     console.log("hitesh")
+    // }, 2000);
+
+</script>
