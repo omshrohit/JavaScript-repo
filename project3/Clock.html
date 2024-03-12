@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:black;
+            color:white;
+            
+        }
+        .container{
+            display:flex;
+            flex-direction: column;
+            margin-top:200px;
+            align-items:center;
+        }
+      
+        #clock{
+            background-color:orange;
+            border-radius:10px;
+            text-align:center;
+            padding:20px;
+            color: black;
+        }
+        #clock{
+            margin:0 auto;
+            
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="name">Local Time</div>
+        <div id="clock" ></div>
+    </div>
+</body>
+<script>
+    const clock=document.getElementById("clock")
+    setInterval(function(){
+        //call the function after 1 second 1sec=1000 ms
+        const date=new Date()
+        clock.innerHTML=date.toLocaleTimeString()
+    },1000)
+
+</script>
+</html>
