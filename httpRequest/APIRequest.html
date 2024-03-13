@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width:200px;
+            height:250px;
+            border:2px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+    </div>
+</body>
+<script>
+    const requestUrl="https://api.github.com/users/hiteshchoudhary"
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET',requestUrl)
+ 
+
+    xhr.onreadystatechange=function(){
+            console.log(xhr.readyState)
+            if (xhr.readyState === 4){
+                console.log(this.responseText)//giving th response
+                const data=this.responseText
+                const obj=JSON.parse(data)
+                const followers=obj.followers
+                console.log(followers)
+                //const url="https://avatars.githubusercontent.com/u/11613311?v=4"
+                let img=document.createElement("img")
+                let p=document.createElement("p")
+
+                img.src=obj.avatar_url
+                img.style.width="100%"
+                img.style.height="250px"
+                document.querySelector(".card").appendChild(img)
+                p.innerHTML=`Followers : ${followers}`
+                document.querySelector(".card").appendChild(p)
+            }
+    }
+    xhr.send()
+</script>
+</html>

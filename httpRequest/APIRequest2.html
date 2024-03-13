@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+    <style>
+        .card{
+            width:200px;
+            width:250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+    </div>
+</body>
+<script>
+    let img=document.createElement("img")
+    let p=document.createElement("p")
+    let card=document.querySelector(".card")
+
+    const URLreq="https://api.github.com/users/omshrohit"
+    const xhr=new XMLHttpRequest()
+    xhr.open('GET',URLreq)
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            console.log(this.responseText)
+            const data=this.responseText
+            const obj_data=JSON.parse(data)
+
+            console.log(obj_data.followers)
+            console.log(obj_data.avatar_url)
+            img.src=obj_data.avatar_url
+            img.style.width='100%'
+            img.style.height="100%"
+            card.appendChild(img)
+            p.innerHTML=`followers : ${obj_data.followers}`
+            card.appendChild(p)
+
+           
+        }
+    }
+    xhr.send()
+</script>
+</html>
